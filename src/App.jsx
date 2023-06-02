@@ -1,11 +1,11 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import HomePage from "./pages/HomePage.jsx";
-import ListsPage from "./pages/Lists.jsx";
-import Reviews from "./pages/Reviews.jsx";
-import UserProfile from "./components/UserProfile/UserProfile.jsx";
-import Navbar from "./components/NavBar/Navbar.jsx";
-import "./App.css";
+import React from "react"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import HomePage from "./pages/Homepage.jsx"
+import ListsPage from "./pages/Lists.jsx"
+import Reviews from "./pages/Reviews.jsx"
+import UserProfile from "./components/UserProfile/UserProfile.jsx"
+import Navbar from "./components/NavBar/Navbar.jsx"
+import "./App.css"
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         </Switch>
       </div>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
