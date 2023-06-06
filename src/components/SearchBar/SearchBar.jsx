@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import "./SearchBar.css";
+import React, { useState } from "react"
+import "./SearchBar.css"
 
 const SearchBar = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("")
 
   const handleInputChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+    setSearchTerm(event.target.value)
+  }
 
   const handleSearch = (event) => {
-    event.preventDefault();
-    onSearch(searchTerm);
-  };
+    event.preventDefault()
+    onSearch(searchTerm)
+  }
 
   return (
     <form onSubmit={handleSearch}>
@@ -23,7 +23,7 @@ const SearchBar = ({ onSearch }) => {
       />
       <button type="submit">Search</button>
     </form>
-  );
-};
+  )
+}
 
-export default SearchBar;
+export default SearchBar

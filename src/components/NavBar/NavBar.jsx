@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from "react"
+import { Link } from "react-router-dom"
 
 function NavBar() {
   return (
@@ -7,9 +7,9 @@ function NavBar() {
       <Link to="/">Homepage</Link>
       <Link to="/lists">Lists page</Link>
       <Link to="/reviews">Reviews</Link>
-      <Link to="/users">ALL users for admin</Link>
+      <Link to="/users">ALL users for admin 1</Link>
     </div>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar
