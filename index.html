@@ -1,13 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <meta charset="utf-8" />
+    <title>Coffee Project</title>
+    <link rel="stylesheet" href="src/index.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <header class="header">
+      <div class="header-content">
+        <h1>Coffee Project</h1>
+        <div class="searchbar">
+          <input type="text" placeholder="Search..." />
+          <button>Search</button>
+        </div>
+        <div class="user-buttons">
+          <button>Login</button>
+          <button>Sign up</button>
+          <button>Log out</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="content">
+        <div class="list-carousel">
+          <!-- List carousel content here -->
+        </div>
+
+        <div class="coffee-carousel">
+          <!-- Coffee carousel content here -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <button>Footer Button</button>
+      </div>
+    </footer>
   </body>
 </html>
