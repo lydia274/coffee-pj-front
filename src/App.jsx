@@ -22,15 +22,21 @@ function App() {
   return (
     <Router>
 
+      <Routes>
+        <Route path="/" element={<Header />}>
+          <Route path="/" element={<Footer />}>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/lists" element={<ListsPage />} />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/allusers" element={<AllUsers />} />
+            <Route path="/user" element={<UserProfile />} />
+          </Route>
+        </Route>
+      </Routes>
+
+
       <div>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/lists" element={<ListsPage />} />
-          <Route path="/reviews" element={<Reviews />} />
-          <Route path="/userProfile" element={<UserProfile />} />
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/signup" element={<SignIn />} />
-        </Routes>
+     
 
         {!showLoginForm && (
           <button onClick={handleSubscribeButtonClick}>Subscribe</button>

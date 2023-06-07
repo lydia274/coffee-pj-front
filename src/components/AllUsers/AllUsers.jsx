@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react"
+import service from "../../service/api"
+import axios from "axios"
 
 function AllUsers() {
   const [users, setUsers] = useState([])
@@ -6,14 +8,13 @@ function AllUsers() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("/allusers")
-        const data = await response.json()
-        setUsers(data)
+        const response = await service.get("/allusers")
+        console.log(response)
+        setUsers(response.data)
       } catch (error) {
         console.error("cant fetch users")
       }
     }
-
     fetchUsers()
   }, [])
 
