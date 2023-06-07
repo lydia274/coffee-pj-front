@@ -8,12 +8,12 @@ function CafeSlider() {
     // Fetch a random coffee shop
     const fetchRandomCoffeeShop = async () => {
       try {
-        const response = await fetch("/coffeeshop/random")
+        const response = await fetch("http://localhost:5005/coffeeshop/random")
         const randomCoffeeShop = await response.json()
 
         setCoffeeShop(randomCoffeeShop)
       } catch (error) {
-        console.error("Error fetching random coffee shop:", error)
+        console.error("Error fetching random coffee shop:")
       }
     }
 
@@ -22,9 +22,16 @@ function CafeSlider() {
 
   return (
     <div className="cafe-slider border">
-      <h2>Featured</h2>
-      **Here youre supposed to see the image and the title of a random cafe**
-      **task: fix the paths i guess!!"**
+      <h2>Featured coffeeshop</h2>
+      <p>
+        Discover a hidden gem in the heart of the city, as our featured coffee
+        shop captivates you with its cozy ambiance and exceptional brews.
+      </p>
+      <p>
+        Escape the ordinary and enter a world of extraordinary coffee at our
+        featured coffee shop, where each sip transports you to a realm of
+        unparalleled taste and satisfaction.
+      </p>
       {coffeeShop && (
         <div className="cafe-slider-content border">
           <img
