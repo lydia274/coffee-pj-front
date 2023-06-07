@@ -8,12 +8,8 @@ function CafeSlider() {
     // Fetch a random coffee shop
     const fetchRandomCoffeeShop = async () => {
       try {
-        const response = await fetch("/coffeeshop")
-        const coffeeShops = await response.json()
-
-        // Get a random coffee shop from the list
-        const randomIndex = Math.floor(Math.random() * coffeeShops.length)
-        const randomCoffeeShop = coffeeShops[randomIndex]
+        const response = await fetch("/coffeeshop/random")
+        const randomCoffeeShop = await response.json()
 
         setCoffeeShop(randomCoffeeShop)
       } catch (error) {

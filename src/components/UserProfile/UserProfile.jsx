@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import "./UserProfile.css"
+import service from "../../service/api"
 
 function UserProfile() {
   const [user, setUser] = useState(null)
@@ -7,7 +8,8 @@ function UserProfile() {
   useEffect(() => {
     const oneUser = async () => {
       try {
-        const response = await fetch("/allusers/:id")
+        const response = await service.get("/allusers/:id")
+
         const data = await response.json()
         setUser(data)
       } catch (error) {
