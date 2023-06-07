@@ -1,43 +1,55 @@
-import { createContext, useEffect, useState } from "react"
+import React, { createContext, useState, useEffect } from "react"
+import axios from "axios"
 
-// Step one: create a context object to import elsewhere
 const AuthContext = createContext()
-
-// Create the wrapper component
 const AuthContextWrapper = ({ children }) => {
-	const [isLoggedIn, setIsLoggedIn] = useState(false)
-	const [isLoading, setIsLoading] = useState(true)
+  const [user, setUser] = useState(null)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
-	const checkLogin = (token) => {
-		if (token) {
-			setIsLoggedIn(true)
-		} else {
-			setIsLoggedIn(false)
-		}
-	}
+  useEffect(() => {
+    // execute authuser
+    authenticateUser()
+  }, [])
+  const authenticateUser = async () => {
+    try {
+      // Get the token
+      const token = localStorage.getItem("token")
+      if (token) {
+        // Send the token, we expect a response with the user informations.
+        const response = await axios.get("http://localhost:5005/auth/verify", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        console.log(response)
 
-	// on initial render, check for existing token
-	useEffect(() => {
-		const existingToken = localStorage.getItem("token")
-		checkLogin(existingToken)
-		setIsLoading(false)
-	}, [])
+        // Set the received user infos to my user state
+        // Set is logged in to true.
+        setUser(response.data)
+        setIsLoggedIn(true)
+        setIsLoading(false)
+      } else {
+        setUser(null)
+        setIsLoggedIn(false)
+        setIsLoading(false)
+      }
+    } catch (error) {
+      console.log(error)
+      setUser(null)
+      setIsLoggedIn(false)
+      setIsLoading(false)
+    }
+  }
 
-	const updateToken = (token) => {
-		localStorage.setItem("token", token)
-		checkLogin(token)
-	}
-
-	const logout = () => {
-		localStorage.removeItem("token")
-	}
-
-	return (
-		<AuthContext.Provider
-			value={{ isLoading, isLoggedIn, setToken: updateToken, logout }}>
-			{children}
-		</AuthContext.Provider>
-	)
+  const values = {
+    user,
+    setUser,
+    authenticateUser,
+    isLoggedIn,
+    isLoading,
+  }
+  return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>
 }
-
+// export { AuthContext }
 export { AuthContext, AuthContextWrapper }

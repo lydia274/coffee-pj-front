@@ -14,36 +14,38 @@ import ProtectedRoute from "./pages/ProtectedRoute";
 
 function App() {
   return (
-    <>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/lists" element={<ListsPage />} />
-          <Route path="/reviews" element={<Reviews />} />
+    <Router>
+    <Header />
+      <Routes>
+    
+        <Route path="/" element={<Homepage />} />
+        <Route path="/lists" element={<ListsPage />} />
+        <Route path="/reviews" element={<Reviews />} />
 
-          <Route element={<ProtectedRoute />}>
-            <Route path="/user" element={<UserProfile />} />
-          </Route>
-
-          <Route element={<ProtectedRoute />}>
-            <Route path="/allusers" element={<AllUsers />} />
-          </Route>
-
-          <Route path="/login" element={<LogIn />} />
-          <Route
-            path="/signin"
-            element={<SignIn onClose={handleLoginFormClose} />}
-          />
-
+        <Route element={<ProtectedRoute />}>
           <Route path="/user" element={<UserProfile />} />
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/signin" element={<SignIn />} />
-        </Routes>
-        <Footer />
-      </Router>
+        </Route>
+
+        <Route element={<ProtectedRoute />}>
+          <Route path="/allusers" element={<AllUsers />} />
+        </Route>
+
+        <Route path="/login" element={<LogIn />} />
+        <Route
+          path="/signin"
+          element={<SignIn onClose={handleLoginFormClose} />}
+        />
+      </Routes>
+  <Footer/>
+  </Router>
+
+      
     </>
+  )
+
+
   );
+
 }
 
-export default App;
+export default App
