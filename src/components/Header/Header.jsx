@@ -1,10 +1,10 @@
-import React from "react"
-import NavBar from "../NavBar/NavBar"
-import SearchBar from "../SearchBar/SearchBar"
-import SignIn from "../SignIn/SignIn"
-import LogIn from "../LogIn/LogIn"
-import LogOut from "../LogOut/LogOut"
-import { Outlet } from "react-router-dom"
+import React from "react";
+import NavBar from "../NavBar/NavBar";
+import SearchBar from "../SearchBar/SearchBar";
+import SignIn from "../SignIn/SignIn";
+import LogIn from "../LogIn/LogIn";
+import LogOut from "../LogOut/LogOut";
+import { Outlet } from "react-router-dom";
 
 function Header() {
   return (
@@ -23,7 +23,7 @@ function Header() {
       </header>
       <Outlet />
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;
