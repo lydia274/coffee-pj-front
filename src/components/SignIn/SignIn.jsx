@@ -4,12 +4,14 @@ import "./SignIn.css";
 
 function SignIn() {
   const [expandForm, setExpandForm] = useState(false);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSignUp = async () => {
     try {
       const response = await axios.post("/auth/signup", {
+        name,
         email,
         password,
       });
@@ -35,6 +37,15 @@ function SignIn() {
         <div className="log-in-form">
           <h2>Sign Up</h2>
           <form>
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
             <label htmlFor="email">Email:</label>
             <input
               type="email"
