@@ -1,7 +1,26 @@
-import React from "react"
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-function LogOut() {
-  return <button>Log out</button>
-}
+const LogOut = () => {
+  const navigate = useNavigate();
 
-export default LogOut
+  const handleLogOut = () => {
+    fetch("/auth/logout", {
+      method: "POST",
+    })
+      .then((response) => {
+        if (response.ok) {
+          navigate("/");
+        } else {
+          console.error("Logout failed");
+        }
+      })
+      .catch((error) => {
+        console.error("Logout failed", error);
+      });
+  };
+
+  return <button onClick={handleLogOut}>Log Out</button>;
+};
+
+export default LogOut;
