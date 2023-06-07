@@ -1,30 +1,31 @@
-import React from "react";
-import Slider from "react-slick";
-import "./ListsSlider.css";
+import React from "react"
+import "./ListsSlider.css"
 
-function Carousel() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+function ListsSlider() {
   return (
-    <div className="carousel">
-      <Slider {...settings}>
-        <div className="carousel-slide">
-          <div className="carousel-tile">{/* Content for tile 1 */}</div>
-        </div>
-        <div className="carousel-slide">
-          <div className="carousel-tile">{/* Content for tile 2 */}</div>
-        </div>
-        <div className="carousel-slide">
-          <div className="carousel-tile">{/* Content for tile 3 */}</div>
-        </div>
-      </Slider>
+    <div>
+      <div>
+        <h3>*listing 1*</h3>
+        <div className="image">placeholder</div>
+      </div>
+      <div>
+        <h3>*listing 2*</h3>
+        <div className="image">placeholder</div>
+      </div>
+      <div>
+        <h3>*listing 3*</h3>
+        <div className="image">placeholder</div>
+      </div>
+      <div>
+        <h3>*listing 4*</h3>
+        <div className="image">placeholder</div>
+      </div>
+      <div>
+        <h3>*listing 5*</h3>
+        <div className="image">placeholder</div>
+      </div>
     </div>
-  );
+  )
 }
 
-export default Carousel;
+export default ListsSlider

@@ -1,0 +1,9 @@
+.border {
+  border: solid 1px black;
+}
+
+.cafe-slider {
+  margin: 0 auto;
+  width: 30vw;
+  padding: 3rem;
+}

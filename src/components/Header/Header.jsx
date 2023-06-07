@@ -4,6 +4,7 @@ import SearchBar from "../SearchBar/SearchBar"
 import SignIn from "../SignIn/SignIn"
 import LogIn from "../LogIn/LogIn"
 import LogOut from "../LogOut/LogOut"
+import { Outlet } from "react-router-dom"
 
 function Header() {
   return (
@@ -20,6 +21,7 @@ function Header() {
           </div>
         </div>
       </header>
+      <Outlet />
     </div>
   )
 }
