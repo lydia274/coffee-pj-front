@@ -7,6 +7,8 @@ import UserProfile from "./components/UserProfile/UserProfile";
 import LogIn from "./components/LogIn/LogIn";
 import SignIn from "./components/SignIn/SignIn";
 import "./App.css";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [showLoginForm, setShowLoginForm] = useState(false);
@@ -20,41 +22,36 @@ function App() {
   };
 
   return (
-    <Router>
+    <>
+      <Router>
+        <Header />
 
-      <Routes>
-        <Route path="/" element={<Header />}>
-          <Route path="/" element={<Footer />}>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/lists" element={<ListsPage />} />
-            <Route path="/reviews" element={<Reviews />} />
-            <Route path="/allusers" element={<AllUsers />} />
-            <Route path="/user" element={<UserProfile />} />
-          </Route>
-        </Route>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/lists" element={<ListsPage />} />
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/user" element={<UserProfile />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route
+            path="/signin"
+            element={<SignIn onClose={handleLoginFormClose} />}
+          />
+        </Routes>
 
+        <Footer />
+      </Router>
 
-      <div>
-     
-
-        {!showLoginForm && (
-          <button onClick={handleSubscribeButtonClick}>Subscribe</button>
-        )}
-
-        {showLoginForm && (
-          <div className="modal">
-            <div className="modal-content">
-              <button className="close-button" onClick={handleLoginFormClose}>
-                X
-              </button>
-              <SignIn onClose={handleLoginFormClose} />
-            </div>
+      {showLoginForm && (
+        <div className="modal">
+          <div className="modal-content">
+            <button className="close-button" onClick={handleLoginFormClose}>
+              X
+            </button>
+            <SignIn onClose={handleLoginFormClose} />
           </div>
-        )}
-      </div>
-
-    </Router>
+        </div>
+      )}
+    </>
   );
 }
 
