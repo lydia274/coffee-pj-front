@@ -25,19 +25,22 @@ function AllUsers() {
           <td>Name</td>
           <td>Email</td>
           <td>Status</td>
-          <td>Delete?</td>
+          <td></td>
+          <td></td>
         </tr>
         <tr>
           <td>some name</td>
           <td>some email</td>
           <td>some status</td>
-          <td> X </td>
+          <td>edit</td>
+          <td> delete </td>
         </tr>
         <tr>
           <td>some name</td>
           <td>some email</td>
           <td>some status</td>
-          <td> X </td>
+          <td>edit</td>
+          <td> delete </td>
         </tr>
 
         {users.map((user) => (
@@ -45,7 +48,8 @@ function AllUsers() {
             <td>{user.name}</td>
             <td>{user.email}</td>
             <td>{user.status}</td>
-            <td> X </td>
+            <td>edit</td>
+            <td> delete </td>
           </tr>
         ))}
       </table>
