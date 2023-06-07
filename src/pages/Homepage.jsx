@@ -9,11 +9,11 @@ function Homepage() {
   return (
     <>
       <div className="main">
-        <Header />
-        <ListsSlider />
         <CafeSlider />
-        <Footer />
+        <ListsSlider />
       </div>
+
+      <Footer />
     </>
   )
 }

@@ -1,18 +1,5 @@
-.carousel {
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-.carousel-slide {
-  outline: none;
-  text-align: center;
-}
-
-.carousel-tile {
-  width: 280px;
-  height: 280px;
-  margin: 0 auto;
-  background: #d10e0e;
-  border: 1px solid #d10e0e;
-  border-radius: 10px;
+.image {
+  border: solid 1px black;
+  width: 100px;
+  height: 100px;
 }
