@@ -3,7 +3,7 @@ import axios from "axios"
 
 const AuthContext = createContext()
 const AuthContextWrapper = ({ children }) => {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({})
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 

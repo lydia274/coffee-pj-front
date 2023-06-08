@@ -1,29 +1,20 @@
 import React, { useState } from "react"
-// import {useContext} from "react"
-// import { AuthContext } from "../contexts/AuthContext"
+import { useContext } from "react"
+import { AuthContext } from "../../contexts/AuthContext"
 
 function AddReview() {
-  //   const { user } = useContext(AuthContext)
+  const { user } = useContext(AuthContext)
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [coffeeShopName, setCoffeeShopName] = useState("")
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-
-    // Find the coffee shop by its name and get its ID
-    const coffeeShopResponse = await fetch(
-      `/coffeeshops?name=${coffeeShopName}`
-    )
-    const coffeeShops = await coffeeShopResponse.json()
-    const coffeeShopId = coffeeShops[0]._id
-
-    // Create the review object to be sent in the POST request
     const reviewData = {
       title,
       description,
+      coffeeShopName,
       creator: user._id,
-      coffeeShop: coffeeShopId,
     }
 
     // Send the POST request to create the review
@@ -39,8 +30,7 @@ function AddReview() {
       // Review created successfully
       // Handle any success actions or notifications
     } else {
-      // Review creation failed
-      // Handle any error actions or notifications
+      console.log("review creation failed")
     }
   }
 
@@ -71,7 +61,7 @@ function AddReview() {
         <br />
         <div className="buttons">
           <input type="button" value="Cancel" className="cancel" />
-          <input type="submit" value="Send" className="principal" />
+          <input type="submit" value="Add" className="principal" />
         </div>
       </form>
     </div>
