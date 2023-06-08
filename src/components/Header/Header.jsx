@@ -8,9 +8,7 @@ import { Outlet } from "react-router-dom";
 
 function Header() {
   const handleSearch = (searchTerm) => {
-    // Perform your search logic here based on the searchTerm
     console.log("Performing search for:", searchTerm);
-    // Update state or perform any other operations with the search term
   };
 
   return (

@@ -1,4 +1,5 @@
 // import React from "react"
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Homepage from "./pages/Homepage"
 import Reviews from "./pages/Reviews"
@@ -11,6 +12,7 @@ import ProtectedRoute from "./pages/ProtectedRoute"
 import AllCoffeePage from "./pages/AllCoffeePage"
 import EditCS from "./components/EditCS/EditCS"
 
+
 function App() {
   return (
     <Routes>
@@ -18,7 +20,10 @@ function App() {
         <Route path="/" element={<Footer />}>
           <Route path="/" element={<Homepage />} />
 
+        
+
           <Route path="/allcoffeeshops" element={<AllCoffeePage />} />
+
 
           <Route element={<ProtectedRoute />}>
             <Route path="/reviews" element={<Reviews />} />
@@ -31,7 +36,7 @@ function App() {
         </Route>
       </Route>
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;
