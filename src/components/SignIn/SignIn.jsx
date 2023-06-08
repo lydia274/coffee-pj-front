@@ -1,48 +1,40 @@
-import React, { useState } from "react";
-import axios from "axios";
-import "./SignIn.css";
+import React, { useState } from "react"
+import axios from "axios"
+import "./SignIn.css"
 
 function SignIn() {
-  const [expandForm, setExpandForm] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+  const [expandForm, setExpandForm] = useState(false)
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [successMessage, setSuccessMessage] = useState("")
 
   const handleSignUp = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     try {
       const response = await axios.post("/auth/signup", {
         name,
         email,
         password,
-      });
+      })
 
-      console.log(response.data);
-      setSuccessMessage("Sign up successful!");
-      setName("");
-      setEmail("");
-      setPassword("");
-      setExpandForm(false);
+      console.log(response.data)
+      setSuccessMessage("Sign up successful!")
+      setName("")
+      setEmail("")
+      setPassword("")
+      setExpandForm(false)
     } catch (error) {
-      console.error(error);
-      setSuccessMessage("Sign up failed. Please try again.");
+      console.error(error)
+      setSuccessMessage("Sign up failed. Please try again.")
     }
-  };
+  }
 
   const handleExpandForm = () => {
-    setExpandForm(true);
-    setSuccessMessage("");
-  };
-
-  const handleRollUpForm = () => {
-    setExpandForm(false);
-    setSuccessMessage("");
-    setName("");
-    setEmail("");
-    setPassword("");
-  };
+    setExpandForm(true)
+    setSuccessMessage("")
+  }
 
   return (
     <div className={`log-in-container ${expandForm ? "expanded" : ""}`}>
@@ -92,7 +84,7 @@ function SignIn() {
         </div>
       ) : null}
     </div>
-  );
+  )
 }
 
-export default SignIn;
+export default SignIn
