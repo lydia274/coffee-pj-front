@@ -10,7 +10,7 @@ function AllCoffeeshops({ csItem, user, fetchCS }) {
 
   async function handleDelete(id) {
     try {
-      await fetch("http://localhost:5005/coffeeshop/" + id, {
+      await fetch("https://coffeepj.onrender.com/coffeeshop/" + id, {
         method: "delete",
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })

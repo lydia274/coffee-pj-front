@@ -17,11 +17,14 @@ const AuthContextWrapper = ({ children }) => {
       const token = localStorage.getItem("token")
       if (token) {
         // Send the token, we expect a response with the user informations.
-        const response = await axios.get("http://localhost:5005/auth/verify", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
+        const response = await axios.get(
+          "https://coffeepj.onrender.com/auth/verify",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
         console.log(response)
 
         // Set the received user infos to my user state
