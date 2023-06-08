@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react"
 import "./UserProfile.css"
 import service from "../../service/api"
+import { useContext } from "react"
+import { AuthContext } from "../../contexts/AuthContext"
 
 function UserProfile() {
-  const [user, setUser] = useState(null)
+  const [userProfile, setUser] = useState(null)
+  const { user } = useContext(AuthContext)
 
   useEffect(() => {
+    console.log(user)
     const oneUser = async () => {
       try {
-        const response = await service.get("/allusers/:id")
+        const response = await service.get(`/allusers/${user._id}`)
 
-        const data = await response.json()
-        setUser(data)
+        setUser(response.data)
       } catch (error) {
         console.error("!!! Error !!!")
       }
@@ -20,7 +23,7 @@ function UserProfile() {
     oneUser()
   }, [])
 
-  if (!user) {
+  if (!userProfile) {
     return <div>Loading...</div> // loading while waitign
   }
 
@@ -28,9 +31,9 @@ function UserProfile() {
     <div>
       <div>
         <h1>Your Profile</h1>
-        <p>Name: {user.name}</p>
-        <p>Email: {user.email}</p>
-        <p>Registration Date: {user.createdAt}</p>
+        <p>Name: {userProfile.name}</p>
+        <p>Email: {userProfile.email}</p>
+        <p>Registration Date: {userProfile.createdAt}</p>
       </div>
     </div>
   )
