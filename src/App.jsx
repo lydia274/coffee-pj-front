@@ -1,14 +1,15 @@
 // import React from "react"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Homepage from "./pages/Homepage"
-import ListsPage from "./pages/Lists"
-import Reviews from "./pages/Reviews"
-import UserProfile from "./components/UserProfile/UserProfile"
-import "./App.css"
-import Header from "./components/Header/Header"
-import Footer from "./components/Footer/Footer"
-import AllUsers from "./components/AllUsers/AllUsers"
-import ProtectedRoute from "./pages/ProtectedRoute"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Homepage from "./pages/Homepage";
+import ListsPage from "./pages/Lists";
+import Reviews from "./pages/Reviews";
+import UserProfile from "./components/UserProfile/UserProfile";
+import "./App.css";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import AllUsers from "./components/AllUsers/AllUsers";
+import ProtectedRoute from "./pages/ProtectedRoute";
+import SearchResultsPage from "./pages/SearchResultsPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/lists" element={<ListsPage />} />
           <Route path="/reviews" element={<Reviews />} />
+          <Route path="/search" element={<SearchResultsPage />} />
 
           <Route element={<ProtectedRoute />}>
             <Route path="/allusers" element={<AllUsers />} />
@@ -27,7 +29,7 @@ function App() {
         </Route>
       </Route>
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;
