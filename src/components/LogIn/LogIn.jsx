@@ -1,21 +1,20 @@
-import React, { useState, useContext } from "react";
-import axios from "axios";
-import { AuthContext } from "../../contexts/AuthContext";
-import "./LogIn.css";
+import React, { useState, useContext } from "react"
+import axios from "axios"
+import { AuthContext } from "../../contexts/AuthContext"
+import "./LogIn.css"
 
 function LogIn() {
-  const { authenticateUser } = useContext(AuthContext);
-  const [expandForm, setExpandForm] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
+  const { authenticateUser } = useContext(AuthContext)
+  const [expandForm, setExpandForm] = useState(false)
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [successMessage, setSuccessMessage] = useState("")
 
   const handleLogin = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     try {
-
       event.preventDefault()
       const response = await axios.post(
         "https://coffeepj.onrender.com/auth/login",
@@ -25,20 +24,20 @@ function LogIn() {
         }
       )
 
-      localStorage.setItem("token", response.data.authToken);
-      await authenticateUser();
-      setLoggedIn(true);
-      setSuccessMessage("Login successful!");
-      setExpandForm(false); // line hide the form after successful login normalement
+      localStorage.setItem("token", response.data.authToken)
+      await authenticateUser()
+      setLoggedIn(true)
+      setSuccessMessage("Login successful!")
+      setExpandForm(false) // line hide the form after successful login normalement
     } catch (error) {
-      console.error(error);
-      setSuccessMessage("Invalid email or password. Please try again.");
+      console.error(error)
+      setSuccessMessage("Invalid email or password. Please try again.")
     }
-  };
+  }
 
   const handleExpandForm = () => {
-    setExpandForm(true);
-  };
+    setExpandForm(true)
+  }
 
   return (
     <div className={`log-in-container ${expandForm ? "expanded" : ""}`}>
@@ -50,7 +49,7 @@ function LogIn() {
       {loggedIn ? (
         <div>
           <p>{successMessage}</p>
-          <button onClick={handleRollUpForm}>Log Out</button>
+          <button>Log Out</button>
         </div>
       ) : (
         expandForm && (
@@ -81,7 +80,7 @@ function LogIn() {
         )
       )}
     </div>
-  );
+  )
 }
 
-export default LogIn;
+export default LogIn
