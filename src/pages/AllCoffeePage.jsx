@@ -12,7 +12,7 @@ function AllCoffeePage() {
   const fetchCS = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5005/coffeeshop/allcoffeeshops"
+        "https://coffeepj.onrender.com/coffeeshop/allcoffeeshops"
       )
       const c = await response.json()
       setCS(c)

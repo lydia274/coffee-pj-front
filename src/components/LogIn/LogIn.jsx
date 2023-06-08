@@ -15,10 +15,13 @@ function LogIn() {
 
     try {
       event.preventDefault()
-      const response = await axios.post("http://localhost:5005/auth/login", {
-        email,
-        password,
-      })
+      const response = await axios.post(
+        "https://coffeepj.onrender.com/auth/login",
+        {
+          email,
+          password,
+        }
+      )
 
       localStorage.setItem("token", response.data.authToken)
       await authenticateUser()

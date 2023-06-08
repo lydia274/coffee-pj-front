@@ -29,7 +29,7 @@ function AddCoffeeshop({ fetchCS }) {
     }
 
     // Send the POST request to create the review
-    const response = await fetch("http://localhost:5005/coffeeshop/", {
+    const response = await fetch("https://coffeepj.onrender.com/coffeeshop/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const service = axios.create({
-  baseURL: "http://localhost:5005",
+  baseURL: "https://coffeepj.onrender.com",
 })
 
 service.interceptors.request.use((interceptedRequest) => {

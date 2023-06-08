@@ -8,7 +8,9 @@ function CafeSlider() {
     // Fetch a random coffee shop
     const fetchRandomCoffeeShop = async () => {
       try {
-        const response = await fetch("http://localhost:5005/coffeeshop/random")
+        const response = await fetch(
+          "https://coffeepj.onrender.com/coffeeshop/random"
+        )
         const randomCoffeeShop = await response.json()
 
         setCoffeeShop(randomCoffeeShop)
