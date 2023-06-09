@@ -1,6 +1,7 @@
 import React from "react"
 import "./AddCoffeeshop.css"
 import { useState } from "react"
+import service from "../../service/api"
 
 function AddCoffeeshop({ fetchCS }) {
   const [name, setName] = useState("")
@@ -22,13 +23,7 @@ function AddCoffeeshop({ fetchCS }) {
     }
 
     // Send the POST request to create the review
-    const response = await fetch("https://coffeepj.onrender.com/coffeeshop/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newCS),
-    })
+    const response = await service.post("/coffeeshop/", newCS)
 
     if (response.ok) {
       fetchCS()
