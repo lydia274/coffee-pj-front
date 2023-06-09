@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import service from "../../service/api"
 import axios from "axios"
+import "./AllUsers.css"
 
 function AllUsers() {
   const [users, setUsers] = useState([])
@@ -26,22 +27,6 @@ function AllUsers() {
           <td>Name</td>
           <td>Email</td>
           <td>Status</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>some name</td>
-          <td>some email</td>
-          <td>some status</td>
-          <td>edit</td>
-          <td> delete </td>
-        </tr>
-        <tr>
-          <td>some name</td>
-          <td>some email</td>
-          <td>some status</td>
-          <td>edit</td>
-          <td> delete </td>
         </tr>
 
         {users.map((user) => (
@@ -49,8 +34,6 @@ function AllUsers() {
             <td>{user.name}</td>
             <td>{user.email}</td>
             <td>{user.status}</td>
-            <td>edit</td>
-            <td> delete </td>
           </tr>
         ))}
       </table>

@@ -38,7 +38,7 @@ function SignIn() {
 
   return (
     <div className={`log-in-container ${expandForm ? "expanded" : ""}`}>
-      {!expandForm && (
+      {!localStorage.getItem("token") && !expandForm && (
         <button className="log-in-button" onClick={handleExpandForm}>
           Sign Up
         </button>

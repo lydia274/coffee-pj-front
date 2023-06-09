@@ -1,0 +1,44 @@
+.cs-container {
+  margin-top: 20px;
+}
+
+.cs-item {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cs-item h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.cs-item img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.cs-item p {
+  margin-bottom: 8px;
+}
+
+.cs-item a {
+  margin-right: 10px;
+  color: #ff8800;
+}
+
+.cs-item button {
+  background-color: #ff8800;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cs-item button:hover {
+  background-color: #e67700;
+}

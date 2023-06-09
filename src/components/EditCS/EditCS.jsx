@@ -2,17 +2,12 @@ import React, { useState, useContext, useEffect } from "react"
 import { AuthContext } from "../../contexts/AuthContext"
 import { useParams } from "react-router"
 import service from "../../service/api"
+import "./EditCS.css"
 
 function EditCS() {
   const { user } = useContext(AuthContext)
   const { id } = useParams()
   console.log(user)
-
-  //   const [name, setName] = useState(user.name)
-  //   const [image, setImage] = useState(user.image)
-  //   const [address, setAddress] = useState(user.address)
-  //   const [openingHours, setHours] = useState(user.openingHours)
-  //   const [services, setServices] = useState(user.services)
   const [singleCs, setCs] = useState(null)
 
   useEffect(() => {

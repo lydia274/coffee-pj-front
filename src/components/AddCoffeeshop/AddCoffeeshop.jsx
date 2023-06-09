@@ -12,13 +12,6 @@ function AddCoffeeshop({ fetchCS }) {
   const handleSubmit = async (event) => {
     event.preventDefault()
 
-    // Find the coffee shop by its name and get its ID
-    // const coffeeShopResponse = await fetch(
-    //   `/coffeeshops?name=${name}`
-    // )
-    // const coffeeShops = await coffeeShopResponse.json()
-    // const coffeeShopId = coffeeShops[0]._id
-
     // Create the review object to be sent in the POST request
     const newCS = {
       name,

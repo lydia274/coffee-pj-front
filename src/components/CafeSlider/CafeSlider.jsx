@@ -24,25 +24,24 @@ function CafeSlider() {
 
   return (
     <div className="cafe-slider border">
-      <h2>Featured coffeeshop</h2>
-      <p>
-        Discover a hidden gem in the heart of the city, as our featured coffee
-        shop captivates you with its cozy ambiance and exceptional brews.
-      </p>
+      <h2>Featured today:</h2>
       <p>
         Escape the ordinary and enter a world of extraordinary coffee at our
         featured coffee shop, where each sip transports you to a realm of
         unparalleled taste and satisfaction.
       </p>
+      <p id="join">
+        Join the community to get access to the curated list of the best coffee
+        shops
+      </p>
       {coffeeShop && (
-        <div className="cafe-slider-content border">
+        <div className="cafe-slider-content">
           <img
             src={coffeeShop.image}
             alt={coffeeShop.name}
             style={{ width: "30%" }}
           />
           <h2>{coffeeShop.name}</h2>
-          <a href={`/coffeeshop/${coffeeShop._id}`}>Learn More</a>
         </div>
       )}
     </div>

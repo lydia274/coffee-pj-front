@@ -1,3 +1,30 @@
 .main {
   display: flex;
 }
+
+.bg-image {
+  background-image: url("https://media.istockphoto.com/id/619403886/photo/woman-working-online-at-a-cafe.jpg?s=612x612&w=0&k=20&c=z81v4QkW3uCjVLmvBn6I6XIo-vSpETZn7W07N-Wlb5o=");
+  background-size: cover;
+  background-position: center;
+}
+aside {
+  width: 60vw;
+}
+
+aside h2 {
+  font-size: 3em;
+  text-align: left;
+  padding: 2rem;
+  text-transform: uppercase;
+
+  color: rgb(255, 255, 255);
+  text-shadow: #020819 8px -20px 9px;
+}
+
+aside p {
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  text-shadow: #020819 8px -20px 9px;
+}

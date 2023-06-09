@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react"
+import { useEffect } from "react"
 import axios from "axios"
 import { AuthContext } from "../../contexts/AuthContext"
 import "./LogIn.css"
@@ -11,11 +12,17 @@ function LogIn() {
   const [loggedIn, setLoggedIn] = useState(false)
   const [successMessage, setSuccessMessage] = useState("")
 
+  useEffect(() => {
+    const token = localStorage.getItem("token")
+    if (token) {
+      setLoggedIn(true)
+    }
+  }, [])
+
   const handleLogin = async (event) => {
     event.preventDefault()
 
     try {
-      event.preventDefault()
       const response = await axios.post(
         "https://coffeepj.onrender.com/auth/login",
         {
@@ -27,8 +34,9 @@ function LogIn() {
       localStorage.setItem("token", response.data.authToken)
       await authenticateUser()
       setLoggedIn(true)
-      setSuccessMessage("Login successful!")
-      setExpandForm(false) // line hide the form after successful login normalement
+      setSuccessMessage(":)")
+      setExpandForm(false) // Hide the form after successful login
+      window.location.reload()
     } catch (error) {
       console.error(error)
       setSuccessMessage("Invalid email or password. Please try again.")
@@ -41,15 +49,14 @@ function LogIn() {
 
   return (
     <div className={`log-in-container ${expandForm ? "expanded" : ""}`}>
-      {!loggedIn && !expandForm && (
+      {!loggedIn && !expandForm && !localStorage.getItem("token") && (
         <button className="log-in-button" onClick={handleExpandForm}>
           Login
         </button>
       )}
       {loggedIn ? (
         <div>
-          <p>{successMessage}</p>
-          <button>Log Out</button>
+          <p className="success-message">{successMessage}</p>
         </div>
       ) : (
         expandForm && (
@@ -74,7 +81,9 @@ function LogIn() {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <button>Log In</button>
-              {successMessage && <p>{successMessage}</p>}
+              {successMessage && (
+                <p className="success-message">{successMessage}</p>
+              )}
             </form>
           </div>
         )

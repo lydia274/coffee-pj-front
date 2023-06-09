@@ -4,6 +4,7 @@ import SignIn from "../SignIn/SignIn"
 import LogIn from "../LogIn/LogIn"
 import LogOut from "../LogOut/LogOut"
 import { Outlet } from "react-router-dom"
+import "./Header.css"
 
 function Header() {
   return (

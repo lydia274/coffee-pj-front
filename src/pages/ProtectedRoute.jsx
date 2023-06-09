@@ -10,6 +10,7 @@ const ProtectedRoute = () => {
   }
   console.table(isLoading, isLoggedIn, user)
   if (!isLoggedIn) {
+    alert("Access Denied!")
     return <Navigate to={"/"} />
   }
   if (isLoggedIn) {

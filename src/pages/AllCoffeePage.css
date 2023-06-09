@@ -1,0 +1,26 @@
+.display-cs {
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+  height: "100vh";
+}
+
+.join-message {
+  color: dodgerblue;
+  font-size: 1rem;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.lock-container {
+  margin: 0 auto;
+  width: 80vh;
+  height: 80vh;
+  background-image: url("https://img.joomcdn.net/3f9894bdf6c11e751f6435a43e59b05599dcce7d_original.jpeg");
+
+  background-size: cover;
+  background-position: center;
+}

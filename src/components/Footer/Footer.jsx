@@ -7,12 +7,11 @@ function Footer() {
     <>
       <Outlet />
 
-      <footer>
+      <footer className="footer">
         <div className="container">
           <div className="footer-section">
             <h3>Follow Us</h3>
             <ul className="social-media-links">
-              {/* Add your social media icons or links here */}
               <li>Facebook</li>
               <li>Twitter</li>
               <li>Instagram</li>

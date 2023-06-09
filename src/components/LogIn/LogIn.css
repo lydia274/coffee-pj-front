@@ -1,69 +1,62 @@
 .log-in-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: height 0.3s ease-in-out;
-  height: 40px; /* Set the initial height to the collapsed state */
-  overflow: hidden;
-}
-
-.log-in-container.expanded {
-  height: auto; /* Expand the height to fit the form */
+  position: relative;
 }
 
 .log-in-button {
-  background-color: #ff8800;
+  background-color: #212121;
   color: #fff;
-  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  padding: 8px 16px;
   cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.log-in-button.hide {
-  opacity: 0; /* Hide the log-in button */
-  pointer-events: none; /* Disable interactions on hidden button */
 }
 
 .log-in-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  background-color: #212121;
+  color: #fff;
+  box-sizing: border-box;
+  transition: height 0.3s ease;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
 }
 
-.log-in-form h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.log-in-form form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.log-in-container.expanded .log-in-form {
+  transform: translateY(0);
+  transform: translateX(-50%);
+  opacity: 1;
+  width: 200px;
+  visibility: visible;
 }
 
 .log-in-form label {
-  margin-bottom: 5px;
+  display: block;
+  margin-bottom: 8px;
 }
 
 .log-in-form input[type="email"],
 .log-in-form input[type="password"] {
-  width: 300px;
+  width: 90%;
   padding: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .log-in-form button {
-  background-color: #ff8800;
-  color: #fff;
-  padding: 10px 20px;
+  background-color: #fff;
+  color: #212121;
   border: none;
-  border-radius: 5px;
+  padding: 8px 16px;
   cursor: pointer;
 }
 
-.log-in-form button:hover {
-  background-color: #e67700;
+.log-in-form p {
+  margin-top: 8px;
+}
+
+.success-message {
+  color: green;
 }
