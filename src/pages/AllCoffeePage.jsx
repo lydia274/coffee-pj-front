@@ -3,6 +3,7 @@ import AllCoffeeshops from "../components/AllCoffeeshops/AllCoffeeshops"
 import AddCoffeeshop from "../components/AddCoffeeshop/AddCoffeeshop"
 import { AuthContext } from "../contexts/AuthContext"
 import { useContext } from "react"
+import service from "../service/api"
 import "./AllCoffeePage.css"
 
 function AllCoffeePage() {
@@ -21,9 +22,7 @@ function AllCoffeePage() {
 
   const fetchCS = async () => {
     try {
-      const response = await fetch(
-        "https://coffeepj.onrender.com/coffeeshop/allcoffeeshops"
-      )
+      const response = await service.post("/coffeeshop/allcoffeeshops")
       const c = await response.json()
       setCS(c)
       setJoinMessage("")
