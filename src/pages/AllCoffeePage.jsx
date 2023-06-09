@@ -22,9 +22,8 @@ function AllCoffeePage() {
 
   const fetchCS = async () => {
     try {
-      const response = await service.post("/coffeeshop/allcoffeeshops")
-      const c = await response.json()
-      setCS(c)
+      const response = await service.get("/coffeeshop/allcoffeeshops")
+      setCS(response.data)
       setJoinMessage("")
     } catch (error) {
       console.error("Error fetching cs!")
