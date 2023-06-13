@@ -20,7 +20,7 @@ function AllUsers() {
   }, [])
 
   return (
-    <div>
+    <div className="container">
       <h1>User List</h1>
       <table>
         <tr>

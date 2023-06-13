@@ -23,27 +23,23 @@ function AllCoffeeshops({ csItem, user, fetchCS }) {
   return (
     <>
       <h2>All Coffee Shops</h2>
-
-      {csItem.map((cs) => (
-        <div key={cs._id} className="cs-item">
-          <h3>{cs.name}</h3>
-          <img src={cs.image} />
-          <p>{cs.address}</p>
-          <p>{cs.openingHours}</p>
-          <p>{cs.services}</p>
-          <Link to={`/edit/${cs._id}`}>Edit</Link>
-
-          {user.status === "Editor" && (
-            <button
-              onClick={() => {
-                handleDelete(cs._id)
-              }}
-            >
-              Delete
-            </button>
-          )}
-        </div>
-      ))}
+      <div className="cs-container">
+        {csItem.map((cs) => (
+          <div key={cs._id} className="cs-item">
+            <h3>{cs.name}</h3>
+            <img src={cs.image} />
+            <p>{cs.address}</p>
+            <p>{cs.openingHours}</p>
+            <p>{cs.services}</p>
+            {user.status === "Editor" && (
+              <div>
+                <Link to={`/edit/${cs._id}`}>Edit</Link>
+                <button onClick={() => handleDelete(cs._id)}>Delete</button>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </>
   )
 }

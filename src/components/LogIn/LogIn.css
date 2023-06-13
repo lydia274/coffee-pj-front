@@ -46,8 +46,8 @@
 }
 
 .log-in-form button {
-  background-color: #fff;
-  color: #212121;
+  background-color: black;
+  color: yellow;
   border: none;
   padding: 8px 16px;
   cursor: pointer;

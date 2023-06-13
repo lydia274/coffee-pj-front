@@ -28,7 +28,9 @@ function UserProfile() {
   }
 
   return (
-    <div>
+    <div className="container">
+      <aside></aside>
+
       <div className="user-profile-container">
         <h1>Your Profile</h1>
         <p>Name: {userProfile.name}</p>

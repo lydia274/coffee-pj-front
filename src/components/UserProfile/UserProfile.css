@@ -1,3 +1,10 @@
+.container {
+  display: flex;
+  height: 20rem;
+  width: 100%;
+  margin-top: 0;
+}
+
 .user-profile-container {
   display: flex;
   flex-direction: column;
@@ -29,4 +36,10 @@
     max-width: 500px;
     margin: 0 auto;
   }
+}
+
+aside {
+  width: 50%;
+  height: 100%;
+  background-image: url("user-bg.png");
 }

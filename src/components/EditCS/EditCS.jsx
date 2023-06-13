@@ -34,10 +34,13 @@ function EditCS() {
   }
   return (
     <>
-      <div>Update a coffee shop</div>
-
       <div className="upd-cs">
-        <h2>Update a coffee shop!</h2>
+        <h2>Update form</h2>
+        <p>
+          Select a field, modify it to your preference and save. <br /> The
+          updated item will be displayed in the list of all items.
+        </p>{" "}
+        <br />
         <form onSubmit={handleSubmit}>
           <input
             type="text"

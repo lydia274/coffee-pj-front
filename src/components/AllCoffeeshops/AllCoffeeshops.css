@@ -1,16 +1,22 @@
 .cs-container {
   margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .cs-item {
   border: 1px solid #ccc;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 1rem;
+
+  margin: 0.5rem 1rem;
   text-align: center;
+  width: 20%;
+  min-width: 3rem;
 }
 
 .cs-item h3 {
-  font-size: 18px;
+  font-size: 2em;
   margin-bottom: 10px;
 }
 
@@ -41,4 +47,8 @@
 
 .cs-item button:hover {
   background-color: #e67700;
+}
+
+h2 {
+  text-align: center;
 }

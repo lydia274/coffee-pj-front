@@ -35,6 +35,13 @@ function AddCoffeeshop({ fetchCS }) {
   return (
     <div className="add-cs">
       <h2>Add a new coffee shop!</h2>
+      <p>
+        Please fill in the fields below and save to create a new record.
+        <br />
+        All fields are required.
+      </p>
+      <br />
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"
