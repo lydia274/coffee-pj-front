@@ -6,10 +6,14 @@ function Homepage() {
   return (
     <>
       <div className="main">
-        <aside className="bg-image">
-          <h2>Find your best coffee shop</h2>
-          <p>Work on group projects, bring a date or enjoy a book!</p>
-        </aside>
+        <div className="bg-image img-container">
+          <div className="hp-text">
+            <h2>Find your best coffee shop</h2>
+            <p className="intro">
+              Discover our curated selection of coffee shops in Paris.
+            </p>
+          </div>
+        </div>
         <div>
           <CafeSlider />
         </div>

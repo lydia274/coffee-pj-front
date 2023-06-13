@@ -1,6 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+
 .navbar {
   background-color: #212121;
   color: #ffffff;
+  font-family: "Staatliches", cursive;
+  font-size: 1.5em;
   display: flex;
   justify-content: flex-start;
   padding: 16px;
@@ -23,5 +27,5 @@
 }
 
 .nav-link:hover {
-  color: #d1ff17;
+  color: #fffb03;
 }

@@ -1,30 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+
 .main {
   display: flex;
+  flex-direction: column;
 }
 
 .bg-image {
-  background-image: url("https://media.istockphoto.com/id/619403886/photo/woman-working-online-at-a-cafe.jpg?s=612x612&w=0&k=20&c=z81v4QkW3uCjVLmvBn6I6XIo-vSpETZn7W07N-Wlb5o=");
+  background-image: url("https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80");
   background-size: cover;
   background-position: center;
 }
-aside {
-  width: 60vw;
+
+.img-container {
+  width: 100%;
+  height: 100vh;
 }
 
-aside h2 {
-  font-size: 3em;
-  text-align: left;
-  padding: 2rem;
-  text-transform: uppercase;
-
-  color: rgb(255, 255, 255);
-  text-shadow: #020819 8px -20px 9px;
+.img-container h2 {
+  font-family: "Staatliches", cursive;
+  font-size: 5.5rem;
+  text-shadow: 5px 5px #fffb03;
 }
 
-aside p {
+h1,
+h2,
+h3 {
+  font-family: "Staatliches", cursive;
+}
+
+.intro {
+  font-family: "Staatliches", cursive;
   color: white;
-  font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.5em;
+  background-color: #000000;
+}
+.hp-text {
+  width: 50%;
+  margin: 0 auto;
   text-align: center;
-  text-shadow: #020819 8px -20px 9px;
 }
