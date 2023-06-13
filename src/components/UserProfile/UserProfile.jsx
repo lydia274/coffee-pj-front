@@ -29,7 +29,7 @@ function UserProfile() {
 
   return (
     <div className="container">
-      <aside></aside>
+      <aside id="user-aside"></aside>
 
       <div className="user-profile-container">
         <h1>Your Profile</h1>

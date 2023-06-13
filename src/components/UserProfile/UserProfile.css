@@ -38,7 +38,7 @@
   }
 }
 
-aside {
+#user-aside {
   width: 50%;
   height: 100%;
   background-image: url("user-bg.png");
