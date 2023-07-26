@@ -39,3 +39,23 @@ h3 {
   margin: 0 auto;
   text-align: center;
 }
+
+.test {
+  position: fixed;
+  right: 1rem;
+  top: 10rem;
+  border: dotted 5px yellow;
+  background-color: black;
+  width: 20rem;
+  font-size: smaller;
+  color: yellow;
+  padding: 0.5rem;
+}
+.test:hover {
+  color: white;
+  border: dotted 5px red;
+}
+
+.test:active {
+  color: white;
+}
